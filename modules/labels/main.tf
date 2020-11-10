@@ -12,35 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "github_issue_label" "KIND_BUG" {
+resource "github_issue_label" "kind_bug" {
   repository  = var.repository_name
   name        = "kind/bug"
   description = "Categorizes issue or PR as related to a bug"
   color       = "FF0040"
 }
 
-resource "github_issue_label" "KIND_DISCUSSION" {
+resource "github_issue_label" "kind_discussion" {
   repository  = var.repository_name
   name        = "kind/discussion"
   description = "Categorizes issue or PR as related to a discussion"
   color       = "fbca04"
 }
 
-resource "github_issue_label" "KIND_DOCUMENTATION" {
+resource "github_issue_label" "kind_documentation" {
   repository  = var.repository_name
   name        = "kind/documentation"
   description = "Categorizes issue or PR as related to documentation"
   color       = "5319e7"
 }
 
-resource "github_issue_label" "KIND_FEATURE" {
+resource "github_issue_label" "kind_feature" {
   repository  = var.repository_name
   name        = "kind/feature"
   description = "Categorizes issue or PR as related to a new feature"
   color       = "1d76db"
 }
 
-resource "github_issue_label" "KIND_QUESTION" {
+resource "github_issue_label" "kind_question" {
   repository  = var.repository_name
   name        = "kind/question"
   description = "Categorizes issue or PR as related to a question"
