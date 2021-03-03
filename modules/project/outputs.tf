@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-// Name of the team
-output "name" {
-  value = github_team.team.slug
+output "info" {
+  value       = github_organization_project.project.url
+  description = "URL of the project"
 }

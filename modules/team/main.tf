@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2019 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright (C) 2018-2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,21 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "github_team" "team" {
-  name        = var.name
-  description = var.description
-  privacy     = var.privacy
-}
+terraform {
+  required_version = ">= 0.14.0"
 
-resource "github_team_membership" "maintainer_members" {
-  count    = length(var.maintainer_members)
-  team_id  = github_team.team.id
-  username = var.maintainer_members[count.index]
-  role     = "maintainer"
-}
-
-resource "github_team_membership" "members" {
-  count    = length(var.members)
-  team_id  = github_team.team.id
-  username = var.members[count.index]
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = ">= 4.5.0"
+    }
+  }
 }
