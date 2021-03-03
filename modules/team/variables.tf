@@ -30,13 +30,13 @@ variable "privacy" {
 }
 
 variable "maintainer_members" {
-  type        = list
+  type        = list(any)
   description = "(Optional) The usernames to add to the team as maintainer"
   default     = []
 }
 
 variable "members" {
-  type        = list
+  type        = list(any)
   description = "(Optional) The usernames to add to the team as members"
   default     = []
 }

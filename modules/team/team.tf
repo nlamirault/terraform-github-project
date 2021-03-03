@@ -12,13 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-variable "name" {
-  type        = string
-  description = "The name of the project."
+resource "github_team" "team" {
+  name        = var.name
+  description = var.description
+  privacy     = var.privacy
 }
 
-variable "columns" {
-  type        = list(any)
-  description = "(Optional) The names of the columns."
-  default     = ["Backlog", "Todo", "Doing", "Done"]
+resource "github_team_membership" "maintainer_members" {
+  count    = length(var.maintainer_members)
+  team_id  = github_team.team.id
+  username = var.maintainer_members[count.index]
+  role     = "maintainer"
+}
+
+resource "github_team_membership" "members" {
+  count    = length(var.members)
+  team_id  = github_team.team.id
+  username = var.members[count.index]
 }

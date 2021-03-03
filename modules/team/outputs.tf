@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright (C) 2018-2019 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,13 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-terraform {
-  required_version = ">= 0.14.0"
-
-  required_providers {
-    github = {
-      source  = "integrations/github"
-      version = ">= 4.5.0"
-    }
-  }
+output "name" {
+  value       = github_team.team.slug
+  description = "The slug of the created team"
 }
