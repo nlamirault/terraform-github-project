@@ -149,5 +149,5 @@ resource "github_issue_label" "lifecycle_rotten" {
   repository  = var.repository_name
   name        = "lifecycle/rotten"
   description = "Denotes an issue or PR that has aged beyond stale and will be auto-closed."
-  color       = "#212F3D"
+  color       = "212F3D"
 }
