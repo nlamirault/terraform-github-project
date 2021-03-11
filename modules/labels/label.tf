@@ -123,3 +123,31 @@ resource "github_issue_label" "status_review_needed" {
   description = "The issue or PR needs to be reviewed"
   color       = "fbca04"
 }
+
+resource "github_issue_label" "lifecycle_active" {
+  repository  = var.repository_name
+  name        = "lifecycle/active"
+  description = "Indicates that an issue or PR is actively being worked on by a contributor."
+  color       = "75CA20"
+}
+
+resource "github_issue_label" "lifecycle_frozen" {
+  repository  = var.repository_name
+  name        = "lifecycle/frozen"
+  description = "Indicates that an issue or PR should not be auto-closed due to staleness."
+  color       = "10D3EE"
+}
+
+resource "github_issue_label" "lifecycle_stale" {
+  repository  = var.repository_name
+  name        = "lifecycle/stale"
+  description = "Denotes an issue or PR has remained open with no activity and has become stale."
+  color       = "616F6C"
+}
+
+resource "github_issue_label" "lifecycle_rotten" {
+  repository  = var.repository_name
+  name        = "lifecycle/rotten"
+  description = "Denotes an issue or PR that has aged beyond stale and will be auto-closed."
+  color       = "#212F3D"
+}
