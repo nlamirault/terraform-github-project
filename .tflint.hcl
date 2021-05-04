@@ -1,5 +1,5 @@
 # Copyright (C) 2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
-#
+
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -12,22 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Project / Release Drafter
+config {
+  module = false
+  force = false
+  disabled_by_default = false
 
-on:
-  push:
-    # branches to consider in the event; optional, defaults to all
-    branches:
-      - master
+  ignore_module = {
+  }
 
-jobs:
-  update_release_draft:
-    runs-on: ubuntu-latest
-    steps:
-      # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
-        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
-        # with:
-          # config-name: my-config.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+}
