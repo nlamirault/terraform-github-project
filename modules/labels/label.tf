@@ -47,6 +47,27 @@ resource "github_issue_label" "kind_question" {
   color       = "cc317c"
 }
 
+resource "github_issue_label" "kind_deprecation" {
+  repository  = var.repository_name
+  name        = "kind/deprecation"
+  description = "Categorizes issue or PR as related to a feature/enhancement marked for deprecation"
+  color       = "cc317c"
+}
+
+resource "github_issue_label" "kind_cleanup" {
+  repository  = var.repository_name
+  name        = "kind/cleanup"
+  description = "Categorizes issue or PR as related to cleaning up code, process, or technical debt"
+  color       = "cc317c"
+}
+
+resource "github_issue_label" "kind_support" {
+  repository  = var.repository_name
+  name        = "kind/support"
+  description = "Categorizes issue or PR as a support question"
+  color       = "cc317c"
+}
+
 resource "github_issue_label" "priority_critical" {
   repository  = var.repository_name
   name        = "priority/critical"
@@ -73,6 +94,13 @@ resource "github_issue_label" "priority_low" {
   name        = "priority/low"
   description = "This issue can probably be picked up by anyone looking to contribute to the project, as an entry fix"
   color       = "0e8a16"
+}
+
+resource "github_issue_label" "priority_backlog" {
+  repository  = var.repository_name
+  name        = "priority/backlog"
+  description = "Possibly useful, but not yet enough support to actually get it done"
+  color       = "fbca04"
 }
 
 resource "github_issue_label" "status_abandonned" {
@@ -150,4 +178,25 @@ resource "github_issue_label" "lifecycle_rotten" {
   name        = "lifecycle/rotten"
   description = "Denotes an issue or PR that has aged beyond stale and will be auto-closed."
   color       = "212F3D"
+}
+
+resource "github_issue_label" "needs_triage" {
+  repository  = var.repository_name
+  name        = "needs/triage"
+  description = "Indicates an issue or PR lacks a `triage/foo` label and requires one."
+  color       = "D669BE"
+}
+
+resource "github_issue_label" "needs_priority" {
+  repository  = var.repository_name
+  name        = "needs/priority"
+  description = "Indicates a PR lacks a `priority/foo` label and requires one."
+  color       = "D669BE"
+}
+
+resource "github_issue_label" "needs_kind" {
+  repository  = var.repository_name
+  name        = "needs/kind"
+  description = "Indicates a PR lacks a `kind/foo` label and requires one."
+  color       = "D669BE"
 }
