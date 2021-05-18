@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+resource "github_issue_label" "kind_renovate" {
+  repository  = var.repository_name
+  name        = "kind/renovate"
+  description = "Categorizes issue or PR as related to Renovate"
+  color       = "FF0040"
+}
+
 resource "github_issue_label" "kind_bug" {
   repository  = var.repository_name
   name        = "kind/bug"
