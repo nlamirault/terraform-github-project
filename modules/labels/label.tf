@@ -207,3 +207,31 @@ resource "github_issue_label" "needs_kind" {
   description = "Indicates a PR lacks a `kind/foo` label and requires one."
   color       = "D669BE"
 }
+
+resource "github_issue_label" "needs_lifecycle" {
+  repository  = var.repository_name
+  name        = "needs/lifecycle"
+  description = "Indicates a PR lacks a `lifecycle/foo` label and requires one."
+  color       = "D669BE"
+}
+
+resource "github_issue_label" "needs_œ" {
+  repository  = var.repository_name
+  name        = "needs/area"
+  description = "Indicates an issue or PR lacks a `area/foo` label and requires one."
+  color       = "D669BE"
+}
+
+resource "github_issue_label" "needs_size" {
+  repository  = var.repository_name
+  name        = "needs/size"
+  description = "Indicates an issue or PR lacks a `size/foo` label and requires one."
+  color       = "D669BE"
+}
+
+resource "github_issue_label" "needs_status" {
+  repository  = var.repository_name
+  name        = "needs/status"
+  description = "Indicates an issue or PR lacks a `status/foo` label and requires one."
+  color       = "D669BE"
+}
