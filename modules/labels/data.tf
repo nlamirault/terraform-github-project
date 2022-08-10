@@ -1,4 +1,4 @@
-# Copyright (C) 2018-2019 Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# Copyright (C) 2018-2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-variable "repository_name" {
-  type        = string
-  description = "The name of the repository (in org/name format)."
+data "github_repository" "this" {
+  full_name = var.repository_name
 }
