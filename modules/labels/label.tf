@@ -187,6 +187,41 @@ resource "github_issue_label" "lifecycle_rotten" {
   color       = "212F3D"
 }
 
+resource "github_issue_label" "size_xs" {
+  repository  = github_repository.project.name
+  name        = "size/xs"
+  description = "Size XS"
+  color       = "ededed"
+}
+
+resource "github_issue_label" "size_s" {
+  repository  = github_repository.project.name
+  name        = "size/s"
+  description = "Size S"
+  color       = "ededed"
+}
+
+resource "github_issue_label" "size_m" {
+  repository  = github_repository.project.name
+  name        = "size/m"
+  description = "Size M"
+  color       = "ededed"
+}
+
+resource "github_issue_label" "size_l" {
+  repository  = github_repository.project.name
+  name        = "size/l"
+  description = "Size L"
+  color       = "ededed"
+}
+
+resource "github_issue_label" "size_xl" {
+  repository  = github_repository.project.name
+  name        = "size/xl"
+  description = "Size XL"
+  color       = "ededed"
+}
+
 resource "github_issue_label" "needs_triage" {
   repository  = var.repository_name
   name        = "needs/triage"
@@ -215,7 +250,7 @@ resource "github_issue_label" "needs_lifecycle" {
   color       = "D669BE"
 }
 
-resource "github_issue_label" "needs_œ" {
+resource "github_issue_label" "needs_area" {
   repository  = var.repository_name
   name        = "needs/area"
   description = "Indicates an issue or PR lacks a `area/foo` label and requires one."
